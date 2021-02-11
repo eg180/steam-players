@@ -9,24 +9,26 @@ import { useState, useEffect } from 'react';
 
 // }
 const friends = ['76561197970485587', '76561198315462253']
-const myKey = 'C5FF546B0E2C25F709888DE7C081ABE9'
+const myKey = 'deleted'
 
 
 function App() {
   const [data, setData] = useState([])
-  const [friendIDs, setFriendIDs] = useState(friends)
+  const [friendIDs, setFriendIDs] = useState('Received Cors Error')
 
 
-  useEffect(() => {
-    axios.get(`http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${myKey}&steamids=${friendIDs}`)
-    .then(res => {
-      setData(data)
+  // useEffect(() => {
+  //   axios.get(`http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${myKey}&steamids=${friendIDs}`)
+    
+  //   .then(res => {
+  //     // setData(data)
+  //     console.log(res)
       
-    })
-    .catch(err => {
-      console.log(err)
-    })
-  },[])
+  //   })
+  //   .catch(err => {
+  //     console.log(err)
+  //   })
+  // },[])
 
   // useEffect(() => {
 
@@ -46,7 +48,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h2>API DATA: {data}</h2>
+        <h2>API DATA: {friendIDs}</h2>
       </header>
     </div>
   );
